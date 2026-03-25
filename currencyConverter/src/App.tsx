@@ -54,17 +54,25 @@ const App = () => {
             placeholder='Enter amount in Rupees'
           />
         </View>
+        {/* {Conditional Rendering} */}
         {resultValue && (
           <Text style={styles.resultTxt}>
             {resultValue}
           </Text>
         )}
+
+        {/** The above can be returned like this
+         * if (resultValue) {
+               return <Text>{resultValue}</Text>;
+           }
+      */}
       </View>
       <View style={styles.bottomContainer}>
         <FlatList
-          numColumns={3}
+          // numColumns={3}
           data={currencyByRupee}
-          keyExtractor={item=>item.name}
+          keyExtractor={item=>item.name} 
+          // {Every item in a list needs a unique key so React can efficiently update the UI.}
           renderItem={({item}) => (
             <Pressable
             style={[
