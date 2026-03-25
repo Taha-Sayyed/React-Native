@@ -7,11 +7,11 @@ type CurrencyButtonProps=PropsWithChildren<{
     flag:string
 }>
 
-const CurrencyButton = (props:CurrencyButtonProps) => {
+const CurrencyButton = ({name,flag}:CurrencyButtonProps) => {
   return (
     <View>
-      <Text>{props.flag}</Text>
-      <Text>{props.name}</Text>
+      <Text>{flag}</Text>
+      <Text>{name}</Text>
     </View>
   )
 }
